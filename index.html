@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+    <nav class="navbar navbar-expand sticky-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Vue.js</a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a v-on:click="page = 'home'" class="nav-link">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a v-on:click="page = 'projects'" class="nav-link">PROJECTS</a>
+                </li>
+                <li class="nav-item">
+                    <a v-on:click="page = 'services'" class="nav-link">SERVICES</a>
+                </li>
+            </ul>
+    </nav>
+    <div v-if="page === 'home'" class="container">
+        <h1>HOME</h1>
+        <div class="card mb-3">
+            <img src="./banner.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Actividad VueJS</h5>
+                <p class="card-text">
+                    SPA que contiene:
+                </p>
+                <ol>
+                    <li>Un Menú superior con al menos 3 elementos </li>
+                    <li>La pagina de inicio deberá contener una imagen o contenido de elección del alumno</li>
+                    <li>La segunda sección o segundo menú deberá mostrar una sección con un listado en donde con en un botón tendrá la funcionalidad de convertir el listado de articulos / items en un Grid con los mismos artículos, esta funcionalidad deberá ser en ambas direcciones listado-grid y grid-listado</li>
+                    <li>La tercera sección del menú debera contener una seríe de items que al estar activos deberá mostrar una suma de valores que posea cada item</li>
+                </ol>
+                <p class="card-text"><small class="text-muted">Por: Carlos I. Cárdenas - A00820062</small></p>
+            </div>
+        </div>
+    </div>
+
+    <div v-if="page === 'projects'" class="container">
+        <h1>PROJECTS</h1>
+        <div class="btn-group" role="group" style="margin-bottom: 15px;">
+            <button v-on:click="view = 'list'" class="btn">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-list-task" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"/>
+                    <path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"/>
+                    <path fill-rule="evenodd" d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"/>
+                </svg>
+            </button>
+            <button v-on:click="view = 'grid'" class="btn">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-grid-3x3-gap" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M4 2H2v2h2V2zm1 12v-2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V7a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm5 10v-2a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V7a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V2a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zM9 2H7v2h2V2zm5 0h-2v2h2V2zM4 7H2v2h2V7zm5 0H7v2h2V7zm5 0h-2v2h2V7zM4 12H2v2h2v-2zm5 0H7v2h2v-2zm5 0h-2v2h2v-2zM12 1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zm-1 6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zm1 4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2z"/>
+                </svg>
+            </button>
+        </div>
+        <template v-if="view === 'list'">
+            <div v-for="project in projects" :key="project.title" class="card mb-3" style="max-width: 600px;">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <img :src="project.img" class="card-img">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ project.title }}</h5>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </template>
+        <div v-if="view === 'grid'" class="card-deck">
+            <div v-for="project in projects" :key="project.title" class="col mb-4">
+                <div class="card">
+                    <img :src="project.img" class="card-img-top" style="height: 300px;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div v-if="page === 'services'" class="container">
+        <h1>SERVICES</h1>
+        <div class="list-group">
+            <button v-for="service in services" :key="service.name" 
+            v-on:click="service.isSelected = !service.isSelected"
+            v-bind:class="[{ active: service.isSelected }]"
+            class="list-group-item d-flex justify-content-between align-items-center">
+                {{ service.name }}
+                <span class="badge badge-primary badge-pill">{{ service.cost }}</span>
+            </button>
+            <hr class="my-4">
+            <p class="list-group-item d-flex justify-content-between align-items-center">
+                Total
+                <span class="badge badge-primary badge-pill">
+                    {{ total }}
+                </span>
+            </p>
+        </div>
+    </div>
+
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                page: 'home',
+                projects: [
+                    {title: 'Cómo crear un módulo en Swift', img: './swift.png'},
+                    {title: 'Introducción a Web MIDI', img: './midi.png'},
+                    {title: 'Gestiona tu FTP desde PHP', img: './ftp.jpg'}
+                ],
+                view: 'list',
+                services: [
+                    {name: 'Web Development', cost: 300, isSelected: true},
+                    {name: 'Design', cost: 400, isSelected: false},
+                    {name: 'Integration', cost: 250, isSelected: false},
+                    {name: 'Training', cost: 220, isSelected: false}
+                ]
+            },
+            computed: {
+                total: function () {
+                    let sum = 0;
+                    for (let s in this.services) {
+                        if (this.services[s].isSelected) {
+                            sum += this.services[s].cost;
+                        }
+                    }
+                    return sum;
+                }
+            }
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
